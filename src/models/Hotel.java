@@ -62,6 +62,16 @@ public class Hotel implements Serializable {
         return false;
     }
 
+    public void cancelReservations(String person) {
+        for (int i = 0; i < rooms.size(); i++) {
+            if (rooms.get(i) != null) {
+                if (rooms.get(i).getName().equals(person)) {
+                    rooms.set(i,null);
+                }
+            }
+        }
+    }
+
     public void printReservations(){
         for(int i=0;i<rooms.size();i++){
             if(rooms.get(i)!=null){
